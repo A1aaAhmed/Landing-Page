@@ -1,0 +1,101 @@
+@mixin im(){
+  width:35rem;
+  height:25rem;
+  background-size:cover;
+  background-repeat: no-repeat;
+  margin:4%;
+  position: relative;
+  border-radius: 10px;
+  font-size:160%;
+  display:inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align:center;
+  transition: transform .2s ;
+  margin-top:30%;
+&:hover{
+    filter: blur(2px);
+    transform: scale(1.2);
+}
+&::before {
+    content: "";
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}}
+body{
+  background-color:saddlebrown;
+}
+.backimg{
+  width:90%;
+  height:80%;
+  background-image: url("../img/img3.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 4.5%;
+}
+#nav{
+  width: 20%;
+  height: 10%;
+}
+.button{
+   $btnan:orange;
+   position: relative;
+    display: inline-block;
+    text-align: center;
+     width: 4rem ;
+     height: 3rem;
+     margin: 2%;
+     padding: 1%;
+     background-color:white;
+     border-radius: 10px;
+     font-size:150%;
+     z-index: 1;
+     &::before{
+       content :'';
+       position:absolute;
+       background-color: $btnan;
+       border-radius: 10px;
+       top:0;
+       left:0;
+       right: 0;
+       bottom: 0;
+       z-index: -1;
+       transform: scaleY(0);
+       transform-origin: bottom;
+       transition: transform 300ms ease-in-out;
+     }
+
+      &:hover::before,&:focus::before{
+        transform: scaleY(1);
+          }}
+.im1{
+background-image: url("../img/img4.jpg");
+@include im();
+justify-content:space-evenly;
+}
+.im2{
+background-image: url("../img/img5.jpg");
+@include im();
+
+}
+
+p{
+  font-size: 47px;
+  position: relative;
+  animation-name: senan;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  text-align: center;
+  span{
+      color:orange;
+  }
+  }
+    @keyframes senan {
+      0% {left:-20%}
+      100% {left:14%}}
